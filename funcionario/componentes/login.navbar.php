@@ -23,42 +23,49 @@ if ($_SESSION["func"] == 'admin') {
       </a>
 
       <div class="col-12 mb-3  dropdown-center">
-        <button type="button" class="btn-dark col-12 btn" data-bs-toggle="dropdown" aria-expanded="false">
+        <button type="button" class="btn-dark col-12 btn" data-bs-toggle="collapse" data-bs-target="#pedidoColeta" aria-expanded="false" aria-controls="pedidoColeta">
           <div class="d-flex justify-content-end">
             <h6 class="">Pedidos e coleta</h6>
           </div>
         </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/index.php?link=3&sceneLogin=6">
+        <div class="collapse" id="pedidoColeta">
+          <div class="card card-body">
+            <ul>
+              <li> <a class="btn-dark btn " href="/index.php?link=3&sceneLogin=6">
               <div class="d-flex justify-content-start">
                 Novos pedidos
               </div>
             </a></li>
-          <li><a class="dropdown-item" href="/index.php?link=3&sceneLogin=7">
+           <li><a class="btn-dark btn " href="/index.php?link=3&sceneLogin=7">
               <div class="d-flex justify-content-start">
                 Pedidos pendentes
               </div>
             </a></li>
-          <li><a class="dropdown-item" href="/index.php?link=3&sceneLogin=4">
+            <li><a class="btn-dark btn" href="/index.php?link=3&sceneLogin=4">
               <div class="d-flex justify-content-start">
                 Gerenciar pedidos
               </div>
             </a></li>
-        </ul>
+            
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="col-12 mb-3  dropdown-center">
-        <button type="button" class="btn-dark col-12 btn" data-bs-toggle="dropdown" aria-expanded="false">
+        <button type="button" class="btn-dark col-12 btn" data-bs-toggle="collapse" data-bs-target="#agendamento" aria-expanded="false" aria-controls="agendamento">
           <div class="d-flex justify-content-end">
             <h6 class="">Agendamentos</h6>
           </div>
         </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/index.php?link=3&sceneLogin=5">
+        <div class="collapse" id="agendamento">
+          <div class="">
+            <a class="btn-dark btn mb-1" href="/index.php?link=3&sceneLogin=5">
               <div class="d-flex justify-content-start">
                 Gerenciar agendamentos
               </div>
-            </a></li>
-        </ul>
+            </a>
+          </div>
+        </div>
       </div>
 
       <div class="col-12 mb-3 dropdown-center">
@@ -98,10 +105,8 @@ if ($_SESSION["func"] == 'admin') {
       </a>
     </div>
   </div>
-<?php }
-?>
-<?php
-if ($_SESSION["func"] == 'coordenador') {
+
+<?php } elseif ($_SESSION["func"] == 'coordenador') {
 ?>
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
     <div class="offcanvas-header">
@@ -162,9 +167,7 @@ if ($_SESSION["func"] == 'coordenador') {
       </a>
     </div>
   </div>
-<?php } ?>
-<?php
-if ($_SESSION["func"] == 'agenteR') {
+<?php } elseif ($_SESSION["func"] == 'agenteR') {
 ?>
 
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
@@ -186,10 +189,10 @@ if ($_SESSION["func"] == 'agenteR') {
         </button>
         <ul class="dropdown-menu">
           <a class="dropdown-item" href="/index.php?link=3&sceneLogin=7">
-              <div class="d-flex justify-content-start">
-                Pedidos pendentes
-              </div>
-            </a></li>
+            <div class="d-flex justify-content-start">
+              Pedidos pendentes
+            </div>
+          </a></li>
         </ul>
       </div>
       <a class="btn-danger btn position-absolute bottom-0 start-50 translate-middle-x col-11" href="/index.php?link=1">

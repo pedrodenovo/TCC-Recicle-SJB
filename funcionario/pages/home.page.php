@@ -1,4 +1,5 @@
-<?php
+<div class="container-fluid text-center">
+	<?php
 if ($_SESSION["func"] == 'admin') {
 ?>
 	<div class="container row mx-auto">
@@ -39,3 +40,4 @@ if ($_SESSION["func"] == 'coordenador') {
 	</div>
 <?php }
 ?>
+</div>
